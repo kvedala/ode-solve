@@ -14,13 +14,14 @@ const unsigned int order = 2;
 
 /**
  * @brief Problem statement for a system with first-order differential
- * equations. Updates the system variables for every time-step.
+ * equations. Updates the system differential variables.
  * @param[in] 		x 		independent variable
  * @param[in,out]	y		dependent variable
  * @param[in,out]	y_dot	first-derivative of dependent variable
  */
 void problem(double *x, double *y, double *dy)
 {
+	const double omega = 0.1;	// some const for the problem
 	dy[0] = y[1];	// x dot
 	dy[1] = -omega * omega * y[0];	// v dot
 }

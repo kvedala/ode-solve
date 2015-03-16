@@ -22,7 +22,7 @@ void forward_euler(double dx, double *x, double *y, double *dy)
 {
 	int o;
 	problem(x, y, dy);
-	for(0 = 0; o < order; o++)
+	for(o = 0; o < order; o++)
 		y[o] += dx * dy[o];
 	*x += dx;
 }
@@ -30,9 +30,8 @@ void forward_euler(double dx, double *x, double *y, double *dy)
 void semi_implicit_euler(double dx, double *x, double *y, double *dy)
 {
 	int o;
-	double y_tmp[order];
 	problem(x, y, dy);	// update dy once
-	y[0] += dx * (dy);	// update y0
+	y[0] += dx * dy[0];	// update y0
 	problem(x, y, dy);	// update dy once more
 	for (o = 1; o < order; o++)
 		y[o] += dx * dy[o];	// update remaining using new dy

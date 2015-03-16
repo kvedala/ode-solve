@@ -18,7 +18,7 @@
 #include "problem.h"
 #include "euler.h"
 
-extern const double X0, *Y0;
+extern double X0, *Y0;
 extern const unsigned int order;
 
 /**
@@ -26,7 +26,7 @@ extern const unsigned int order;
 */
 int main(int argc, char *argv[])
 {
-	double dx, dy[order] = 0.F;
+	double dx, dy[order];
 	double x = X0, *y = Y0;
 	double X_MAX = 1.F;
 	short type;
@@ -86,7 +86,7 @@ int main(int argc, char *argv[])
 		gettimeofday(&t2, NULL);
 		fclose(fp);
 		break;
-	case 2:
+	case 3:
 		fp = fopen("semi-implicit_euler.txt", "w+");
 		if (fp == NULL)
 		{
