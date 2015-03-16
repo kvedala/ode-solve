@@ -1,0 +1,7 @@
+#ifndef __CONFIG_H__
+#define __CONFIG_H__
+
+#define OPENMP_FOUND @OPENMP_FOUND@
+#cmakedefine DEBUG
+
+#endif
