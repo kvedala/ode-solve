@@ -9,7 +9,7 @@
 
 
 const double X0 = 0.F;		/**< initial value of @f(x=x_0@f) */
-const double Y0 = 1.F;		/**< initial value @f(y_0=y\left(x_0\right)@f) */
+double Y0[2] = {1.F, 0.f};	/**< initial value @f(y_0=y\left(x_0\right)@f) */
 const unsigned int order = 2;
 
 /**
@@ -21,7 +21,7 @@ const unsigned int order = 2;
  */
 void problem(double *x, double *y, double *dy)
 {
-	const double omega = 0.1;	// some const for the problem
+	const double omega = 1.F;	// some const for the problem
 	dy[0] = y[1];	// x dot
 	dy[1] = -omega * omega * y[0];	// v dot
 }

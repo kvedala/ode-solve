@@ -18,7 +18,7 @@
 #include "problem.h"
 #include "euler.h"
 
-extern double X0, *Y0;
+extern double X0, Y0[];
 extern const unsigned int order;
 
 /**
@@ -27,10 +27,9 @@ extern const unsigned int order;
 int main(int argc, char *argv[])
 {
 	double dx, dy[order];
-	double x = X0, *y = Y0;
-	double X_MAX = 1.F;
+	double x = X0, *y = &(Y0[0]);
+	double X_MAX = 10.F;
 	short type;
-
 
 	printf("<<<<< ODE Solvers >>>>>\n");
 	printf("1. Forward Euler Method\n");
